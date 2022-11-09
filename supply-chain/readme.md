@@ -14,6 +14,7 @@ A job or vendor can place an `order`, which is fulfilled by the vendor
 * The orders made by `vendor3` are served by `vendor2`.
 * `vendor1` does not make any requests (its upstream interface is `Const Void`).
 
+
 ## Interfaces
 
 An *interface* is a type constructor (kind `Type -> Type`) that describes the
@@ -29,6 +30,7 @@ also often not functors.
 
 The lack of any interface at all can be expressed as `Const Void`.
 
+
 ## Actions
 
 An *action* is a monadic context such as `IO`.
@@ -36,6 +38,7 @@ An *action* is a monadic context such as `IO`.
 The lack of any actions at all can be expressed as `Const Void`. (If you are
 used to dealing with monad transformers, you might be familiar with using
 `Identity` as a trivial context, but such a layer is not needed here.)
+
 
 ## Jobs
 
@@ -57,6 +60,7 @@ used to dealing with monad transformers, you might be familiar with using
               ▼
 ```
 
+
 ## Writing jobs
 
 `Job` belongs to the `Monad` class, and there are two functions for making
@@ -72,6 +76,7 @@ perform :: action product -> Job up action product
 
 A job may also be altered by connecting it to a vendor; see *Vendor-to-job
 connection* below.
+
 
 ## Vendors
 
@@ -95,6 +100,7 @@ connection* below.
 
 The most common way to use vendors is to connect them to jobs using `(>->)` and
 `(>-)`.
+
 
 ## Vendor-to-vendor connection
 
@@ -128,10 +134,10 @@ vendor `v2`, then we can form the composition `v1 >-> v2`.
 When the downstream vendor makes a request of type `i b`, the upstream vendor
 replies with a response of type `b`.
 
-`(>->)` and `id` in the `SupplyChain.Vendor` module form a category.
+`(>->)` and `id` form a category.
 
 ```haskell
-id :: Vendor i i action  -- From "SupplyChain.Vendor"
+id :: Vendor i i action  -- from "SupplyChain.Vendor"
 ```
 
 The `(>->)` operator is associative, and `id` is its identity.
@@ -139,6 +145,7 @@ The `(>->)` operator is associative, and `id` is its identity.
 - `(a >-> b) >-> c` = `a >-> (b >-> c)`
 - `a >-> id` = `a`
 - `a` = `id >-> a`
+
 
 ## Vendor-to-job connection
 
@@ -175,6 +182,7 @@ of type `b`.
 `(>->)` and `(>-)` together are associative.
 
 - `(a >-> b) >- c` = `a >-> (b >- c)`
+
 
 ## Writing vendors
 
