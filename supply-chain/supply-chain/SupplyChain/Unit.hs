@@ -7,4 +7,4 @@ module SupplyChain.Unit
   )
   where
 
-import SupplyChain.Core.Unit (Unit (..))
+import SupplyChain.Core.Unit (Unit (Unit))
