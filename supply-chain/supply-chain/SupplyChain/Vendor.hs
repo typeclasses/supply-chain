@@ -5,8 +5,8 @@ module SupplyChain.Vendor
   (
     {- * Type -} Vendor (Vendor, handle),
     {- * Connection -} (>->), id,
-    {- * Running -} run, eval,
-    {- ** Some simple vendors -} function, action, map, absurd,
+    {- * Some simple vendors -} function, action, map, absurd,
+    {- * Running -} run, eval, eval',
     {- * Alteration -} alter, alter',
   )
   where
@@ -19,6 +19,7 @@ import SupplyChain.JobAndVendor (loop')
 
 import qualified SupplyChain.Core.Connect as Connect
 import qualified SupplyChain.Core.Job as Job
+import qualified SupplyChain.Core.Referral as Referral
 import qualified SupplyChain.Core.Vendor as Vendor
 
 import Control.Applicative (pure)
@@ -33,15 +34,32 @@ import Data.Void (Void)
     -> Vendor up down action
 (>->) = (Connect.>->)
 
+{-| Run a vendor in its action context
+
+   The vendor must not make requests, so its upstream interface
+   is @Const Void@. -}
 run :: Monad action => Vendor (Const Void) down action -- ^ Vendor
     -> down product -- ^ Request
     -> action (Referral (Const Void) down action product)
 run = Vendor.run
 
+{-| Evaluate a vendor with no context
+
+    The vendor must evokes neither request nor actions, so both
+    its upstream and action contexts are @Const Void@. -}
 eval :: Vendor (Const Void) down (Const Void) -- ^ Vendor
     -> down product -- ^ Request
     -> Referral (Const Void) down (Const Void) product
 eval = Vendor.eval
+
+{-| Evaluate a vendor with no context
+
+    The vendor must evokes neither request nor actions, so both
+    its upstream and action contexts are @Const Void@. -}
+eval' :: Vendor (Const Void) down (Const Void) -- ^ Vendor
+    -> down product -- ^ Request
+    -> product
+eval' v r = Referral.product (Vendor.eval v r)
 
 -- | Vendor that never responds to any requests
 absurd :: Vendor up (Const Void) action

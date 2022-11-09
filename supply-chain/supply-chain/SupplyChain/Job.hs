@@ -41,11 +41,19 @@ effect :: Effect up action product -- ^ Effect
     -> Job up action product -- ^ Job
 effect = Job.effect
 
+{-| Run a job in its action context
+
+   The job must not make requests, so its upstream interface
+   is @Const Void@. -}
 run :: Monad action =>
     Job (Const Void) action product -- ^ Job
     -> action product -- ^ Action
 run = Job.run
 
+{-| Evaluate a job with no context
+
+    The job must evokes neither request nor actions, so both
+    its upstream and action contexts are @Const Void@. -}
 eval :: Job (Const Void) (Const Void) product -- ^ Job
     -> product -- ^ Result
 eval = Job.eval
