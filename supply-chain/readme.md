@@ -171,9 +171,9 @@ job `j`, then we can form the composition `v >- j`.
 ┌────────────────────────┐       │
 │  Job i action product  │  j    │
 └────────────────────────┘       │
-             │                  ─┘
-             │  product
-             ▼
+              │                 ─┘
+              │  product
+              ▼
 ```
 
 When the job makes a request of type `i b`, the vendor replies with a response
