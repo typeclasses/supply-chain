@@ -24,7 +24,7 @@ If a job's upstream interface is `i`, then when the job makes a request of type
 
 Values of a type of this kind represent requests. Each constructor will
 typically have a constraint that specifies what type of response is expected in
-return. Types of this kind are therefore often [GADTs]. Types of this kind are
+return. Types of this kind are therefore often GADTs. Types of this kind are
 also often not functors.
 
 The lack of any interface at all can be expressed as `Const Void`.
@@ -233,5 +233,3 @@ Referral :: product -> Vendor up down action -> Referral up down action product
 
 This latter component is what allows vendors to be stateful, and it is usually
 defined recursively.
-
-  [GADTs]: https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/gadt.html
