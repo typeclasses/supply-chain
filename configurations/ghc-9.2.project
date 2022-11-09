@@ -1,0 +1,5 @@
+packages: supply-chain
+
+constraints:
+    base == 4.16.*
+  , supply-chain-core == 0.0.0.0
