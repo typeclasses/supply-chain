@@ -11,8 +11,8 @@ module SupplyChain
   )
   where
 
-import SupplyChain.JobAndVendor (loop, once, (>-), (>+))
 import SupplyChain.Job (Job, order, perform, run, eval)
+import SupplyChain.JobAndVendor (loop, once, (>-), (>+))
 import SupplyChain.Referral (Referral (Referral))
-import SupplyChain.Vendor (Vendor (Vendor, handle), (>->))
 import SupplyChain.Unit (Unit (Unit))
+import SupplyChain.Vendor (Vendor (Vendor, handle), (>->))

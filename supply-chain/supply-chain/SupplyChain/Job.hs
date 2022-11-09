@@ -7,4 +7,4 @@ module SupplyChain.Job
   )
   where
 
-import SupplyChain.Core.Job
+import SupplyChain.Core.Job (Job, alter, effect, eval, order, perform, run)

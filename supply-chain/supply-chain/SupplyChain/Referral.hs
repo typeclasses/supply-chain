@@ -5,4 +5,4 @@ module SupplyChain.Referral
   )
   where
 
-import SupplyChain.Core.Referral
+import SupplyChain.Core.Referral (alter, Referral(..))

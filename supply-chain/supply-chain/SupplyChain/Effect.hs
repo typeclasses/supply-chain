@@ -5,4 +5,4 @@ module SupplyChain.Effect
   )
   where
 
-import SupplyChain.Core.Effect
+import SupplyChain.Core.Effect (Effect (Request, Perform), alterPerform, alterRequest)
