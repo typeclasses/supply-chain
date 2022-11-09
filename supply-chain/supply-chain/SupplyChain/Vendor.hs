@@ -1,3 +1,6 @@
+-- | Description: a /vendor/ responds to requests, makes requests, and
+--                performs actions
+
 module SupplyChain.Vendor
   (
     {- * Type -} Vendor (Vendor, handle),

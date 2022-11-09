@@ -1,3 +1,5 @@
+-- | Description: functions for modifying requests and actions
+
 module SupplyChain.Alter
   (
     {- * General -} job, vendor, request, perform,

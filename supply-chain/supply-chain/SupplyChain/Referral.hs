@@ -1,3 +1,5 @@
+-- | Description: a /referral/ consists of a product and a new vendor
+
 module SupplyChain.Referral
   (
     {- * Type -} Referral (Referral, product, next),

@@ -1,3 +1,5 @@
+-- | Description: an /effect/ is either /request/ or /perform/
+
 module SupplyChain.Effect
   (
     {- * Type -} Effect (Request, Perform),

@@ -1,3 +1,5 @@
+-- | Description: /job/ + /vendor/
+
 module SupplyChain.JobAndVendor
   (
     {- * Connection -} (>-), (>+),
