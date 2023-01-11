@@ -24,7 +24,7 @@ bug-reports: https://github.com/typeclasses/supply-chain/issues
 license: Apache-2.0
 license-file: license.txt
 
-extra-doc-files: readme.md changelog.md
+extra-source-files: *.md
 
 common base
     default-language: GHC2021
