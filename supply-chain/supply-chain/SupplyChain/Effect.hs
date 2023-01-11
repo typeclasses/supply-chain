@@ -1,4 +1,4 @@
--- | Description: an /effect/ is either /request/ or /perform/
+-- | An /effect/ is either /request/ or /perform/
 
 module SupplyChain.Effect
   (

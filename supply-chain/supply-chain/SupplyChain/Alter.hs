@@ -1,4 +1,4 @@
--- | Description: functions for modifying requests and actions
+-- | Functions for modifying requests and actions
 
 module SupplyChain.Alter
   (

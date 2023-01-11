@@ -1,4 +1,4 @@
--- | Description: a /job/ makes requests, performs actions, and returns
+-- | A /job/ makes requests, performs actions, and returns
 
 module SupplyChain.Job
   (
