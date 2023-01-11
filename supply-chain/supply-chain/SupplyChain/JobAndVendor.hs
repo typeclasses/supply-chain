@@ -1,4 +1,4 @@
--- | /job/ + /vendor/
+-- | /Job/ + /vendor/
 
 module SupplyChain.JobAndVendor
   (
