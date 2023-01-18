@@ -241,3 +241,13 @@ Referral :: product -> Vendor up down action -> Referral up down action product
 
 This latter component is what allows vendors to be stateful, and it is usually
 defined recursively.
+
+
+## Notes on package versioning
+
+This `supply-chain` package re-exports types and values from
+`supply-chain-core`. Since a `supply-chain-core` API change can cause a
+`supply-chain` API change, our version bounds on the `supply-chain-core`
+dependency must include three digits. A major or minor version bump in
+`supply-chain-core` prompts a corresponding bump in `supply-chain` if any
+re-exported entities have changed.
